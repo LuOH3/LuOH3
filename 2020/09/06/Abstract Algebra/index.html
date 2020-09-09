@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LuOH3&#39;s homepage">
 <meta property="og:description" content="本文为近世代数课程笔记">
 <meta property="article:published_time" content="2020-09-06T15:06:02.000Z">
-<meta property="article:modified_time" content="2020-09-06T15:08:46.739Z">
+<meta property="article:modified_time" content="2020-09-09T05:27:05.013Z">
 <meta property="article:author" content="Luqingyang">
 <meta name="twitter:card" content="summary">
 
@@ -324,7 +324,64 @@
       
 
       
-        
+        <h1 id="Abstract-Algebra"><a href="#Abstract-Algebra" class="headerlink" title="Abstract Algebra"></a>Abstract Algebra</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><h3 id="Algebra-and-abstract-algebra"><a href="#Algebra-and-abstract-algebra" class="headerlink" title="Algebra and abstract algebra"></a>Algebra and abstract algebra</h3><p>history, omitted</p>
+<h3 id="Examples-from-equations"><a href="#Examples-from-equations" class="headerlink" title="Examples from equations"></a>Examples from equations</h3><p>firstly, we consider the polynomial equation</p>
+<script type="math/tex; mode=display">c_0+c_1x_1^{e_1}...x_n^{e_n}+...+c_mx_1^{g_1}...x_n^{g_n}=0</script><p>Rmk. in order to find $(x_1,\dots,x_n)$, we need to define the so-called “number” first, and it should be equipped with $+$ and $\cdot$</p>
+<p>the most simple number set we can find is $N(N^\times)$</p>
+<p>from the angle of equation, we find out that</p>
+<p>(i) $x+a=b$ in $N(N^\times)$ might have no solution, thus, we consider $Z$, then $+$ is invertible<br>(ii) $ax=b$ in $Z$ might have no solution, thus, we consider $Q$, then $\cdot$ is invertible in $Q\setminus\lbrace 0\rbrace$<br>(iii) $x^2=2$ in $Q$ might have no solution, thus, we consider $R$, then the measurements in physics become meaningful<br>(iv) $x^2+1=0$ in $R$ might have no solution, thus, we consider $C$, which is an algebraic closed field, i.e. $\forall a_0,\dots,a_n\in C,a_0+a_1x+\dots+a_nx^n=0$ must have $n$ roots</p>
+<p>we have more examples of the “number” set</p>
+<p>(1) $H:=\lbrace a_0+a_1i+a_2j+a_3k|a_0,a_1,a_2,a_3\in R\rbrace$, where $i^2=j^2=k^2=-1,i\cdot j=k=-j\cdot i,j\cdot k=i=-k\cdot j,k\cdot i=j=-i\cdot k$</p>
+<p>(2) $M_n(C)$ (note that $\cdot$ is not interchangable)</p>
+<p>(3) let $S$ be a set, then $\text{Map}(S,R),C^0(S,R),C^n(S,R),C^\infty(S,R)$ are all equipped with $+$ and $\cdot$</p>
+<h3 id="Defs"><a href="#Defs" class="headerlink" title="Defs."></a>Defs.</h3><h4 id="1-binary-operation"><a href="#1-binary-operation" class="headerlink" title="(1) binary operation"></a>(1) binary operation</h4><p>a binary operation $\circ$ on a set $S$ is a mapping $S\times S\to S:(a,b)\to a\circ b$</p>
+<h4 id="2-field"><a href="#2-field" class="headerlink" title="(2) field"></a>(2) field</h4><p>A field is a set $K$ equipped with $+$ and $\cdot$ which satisfies</p>
+<p>F1: $+:S\times S\to S:(a,b)\to a+b$ satisfies</p>
+<script type="math/tex; mode=display">\begin{gathered}
+(a+b)+c=a+(b+c),\forall a,b,c\in K\\
+\exists 0_K \text{ s.t. }0_K+a=a=a+0_K,\forall a\in K\\
+\forall a\in K,\exists !b\in K\text{ s.t. }a+b=0_K=b+a\\
+a+b=b+a,\forall a,b\in K\\
+\end{gathered}</script><p>F2: $\cdot:S\times S\to S:(a,b)\to a\cdot b$ satisfies</p>
+<script type="math/tex; mode=display">\begin{gathered}
+(a\cdot b)\cdot c=a\cdot (b\cdot c),\forall a,b,c\in K\\
+\exists 1_K \text{ s.t. }1_K\cdot a=a=a\cdot 1_K,\forall a\in K\\
+\forall a\in K,a\neq 0_K,\exists !b\in K\text{ s.t. }a\cdot b=1_K=b\cdot a\\
+a\cdot b=b\cdot a,\forall a,b\in K\\
+\end{gathered}</script><p>F3: $+$ and $\cdot$ satisfies</p>
+<script type="math/tex; mode=display">(a+b)\cdot c=a\cdot c+b\cdot c,\forall a,b,c\in K</script><p>Rmk. we always ask that $0_K\neq 1_K$, otherwise $K=\lbrace 0_K\rbrace$, which is trivial</p>
+<p>Rmk. to simplify, we often write $na,a^n(n\in Z)$</p>
+<p>the examples of field are $Q,R,C$</p>
+<h4 id="3-ring"><a href="#3-ring" class="headerlink" title="(3) ring"></a>(3) ring</h4><p>a ring is a set $R$ equipped with $+$ and $\cdot$ which satisfies</p>
+<p>R1=F1</p>
+<p>R2=F2#1,#2</p>
+<p>R3=F3</p>
+<p>we define $R^\times:=\lbrace x\in R|x \text{ is invertible}\rbrace$</p>
+<p>the examples of ring are $C^n(I,R),M_n(C)$</p>
+<h4 id="4-group"><a href="#4-group" class="headerlink" title="(4) group"></a>(4) group</h4><p>a group is a set $G$ equipped with $\cdot$ which satisfies</p>
+<p>G=F2#1,#2,#3</p>
+<p>Rmk. $1_G$ in the group is always written as $e_G$</p>
+<p>the examples of group are $(field,+),(field\setminus\lbrace 0\rbrace,\cdot),(ring,+)$</p>
+<h4 id="5-monoid-幺半群"><a href="#5-monoid-幺半群" class="headerlink" title="(5) monoid 幺半群"></a>(5) monoid 幺半群</h4><p>a monoid is a set $M$ equipped with $\cdot$ satisfies</p>
+<p>M=F2#1,#2</p>
+<p>the examples of monoid are $(N,+),(N,\cdot)$</p>
+<h4 id="6-homomorphism-同态"><a href="#6-homomorphism-同态" class="headerlink" title="(6) homomorphism 同态"></a>(6) homomorphism 同态</h4><p>let $F,K$ be fields, the homomorphism $F\to K$ is a mapping $f:F\to K$ s.t.</p>
+<script type="math/tex; mode=display">\begin{gathered}
+f(a+b)=f(a)+f(b)\\
+f(a\cdot b)=f(a)\cdot f(b)\\
+f(0_F)=0_K\\
+f(1_F)=1_K\\
+f(-a)=-f(a)\\
+f(a^{-1})=(f(a))^{-1}\\
+\end{gathered}</script><p>Rmk. some of the properties are reduntant</p>
+<p>similarly, we can define homomorphism between rings, groups and monoids</p>
+<h3 id="Examples-from-number-theory"><a href="#Examples-from-number-theory" class="headerlink" title="Examples from number theory"></a>Examples from number theory</h3><h4 id="Congruence-class-同余类"><a href="#Congruence-class-同余类" class="headerlink" title="Congruence class 同余类"></a>Congruence class 同余类</h4><p>$n\equiv n’\mod m\Leftrightarrow m|n-n’$, defined as $n\stackrel{m}{\sim}n’$</p>
+<p>then $\stackrel{m}{\sim}$ is a equivlance relation, which defines the equivlance class $Z/m=Z/mZ=\lbrace \overline{0},\overline{1},\dots,\overline{m-1}\rbrace$</p>
+<p>define $\overline{n}+\overline{n’}=\overline{n+n’},\overline{n}\cdot\overline{n’}=\overline{n\cdot n’}$, then $Z/mZ$ is a ring, and note that $Z\to Z/mZ:a\to\overline{a}$ is a homomorphism on the ring</p>
+<p>furthermore, if $m$ is a prime, $Z/mZ$ is a field</p>
+<p>if $m=p^e,p$ is a prime, then $#(Z/mZ)^\times=p^e(1-\frac1p)$</p>
+<p>generally, if $m=p_1^{e_1}…p_r^{e_r}$, then $Z/mZ\to Z/p_1^{e_1}Z\times\dots\times Z/p_r^{e_r}Z$ is a homomorphism on the ring, thus, $#Z/mZ=m\prod_{p|m}(1-\frac1p)$</p>
+
       
     </div>
     
@@ -408,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -480,6 +546,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract-Algebra"><span class="nav-number">1.</span> <span class="nav-text">Abstract Algebra</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algebra-and-abstract-algebra"><span class="nav-number">1.1.1.</span> <span class="nav-text">Algebra and abstract algebra</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples-from-equations"><span class="nav-number">1.1.2.</span> <span class="nav-text">Examples from equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Defs"><span class="nav-number">1.1.3.</span> <span class="nav-text">Defs.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-binary-operation"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">(1) binary operation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-field"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">(2) field</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-ring"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">(3) ring</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-group"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">(4) group</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-monoid-幺半群"><span class="nav-number">1.1.3.5.</span> <span class="nav-text">(5) monoid 幺半群</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-homomorphism-同态"><span class="nav-number">1.1.3.6.</span> <span class="nav-text">(6) homomorphism 同态</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples-from-number-theory"><span class="nav-number">1.1.4.</span> <span class="nav-text">Examples from number theory</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Congruence-class-同余类"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">Congruence class 同余类</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
