@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="LuOH3&#39;s homepage">
 <meta property="og:description" content="本文为常微分方程课程笔记">
 <meta property="article:published_time" content="2020-09-06T15:04:41.000Z">
-<meta property="article:modified_time" content="2020-09-08T15:21:15.292Z">
+<meta property="article:modified_time" content="2020-09-22T05:36:25.612Z">
 <meta property="article:author" content="Luqingyang">
 <meta name="twitter:card" content="summary">
 
@@ -365,7 +365,113 @@
 <script type="math/tex; mode=display">\frac{dz}{dx}+(1-n)p(x)z=(1-n)q(x)</script><p>which can be solved</p>
 <h3 id="Def-Riccati-equations"><a href="#Def-Riccati-equations" class="headerlink" title="Def. Riccati equations"></a>Def. Riccati equations</h3><script type="math/tex; mode=display">\frac{dy}{dx}=p(x)y^2+q(x)y+r(x)</script><p>is called a Riccati equation</p>
 <p>most of Riccati equations have no elementary solution</p>
-
+<h2 id="Central-motions-and-Kepler’s-law"><a href="#Central-motions-and-Kepler’s-law" class="headerlink" title="Central motions and Kepler’s law"></a>Central motions and Kepler’s law</h2><h3 id="Def-central-field-force"><a href="#Def-central-field-force" class="headerlink" title="Def. central field force"></a>Def. central field force</h3><p>a field of force $\vec{F}$ is called central if there exists some function $f$ so that </p>
+<script type="math/tex; mode=display">\vec{F}(\vec{r})=f(r)\frac{\vec{r}}{r},\forall \vec{r}\in R^3\setminus\lbrace 0\rbrace</script><p>where $r:=|\vec{r}|$</p>
+<p>Example. gravitional force</p>
+<script type="math/tex; mode=display">\vec{F}(\vec{r})=\frac{-GMm}{r^2}\frac{\vec{r}}{r}</script><h3 id="Thm"><a href="#Thm" class="headerlink" title="Thm."></a>Thm.</h3><p>any motion in a central field is planar</p>
+<p>Proof. by Newton’s second law, </p>
+<script type="math/tex; mode=display">\vec{r}//\vec{F}(\vec{r})//\ddot{\vec{r}},\vec{r}\times\ddot{\vec{r}}=0</script><p>thus,</p>
+<script type="math/tex; mode=display">\frac{d}{dt}(\vec{r}\times\dot{\vec{r}})=\dot{\vec{r}}\times\dot{\vec{r}}+\vec{r}\times\ddot{\vec{r}}=0</script><p>if $\vec{r}\times\dot{\vec{r}}=0$, the motion is linear</p>
+<p>otherwise, let $\vec{r}\times\dot{\vec{r}}=\vec{p}$, then $\vec{r}(t)\bot\vec{p},\forall t$, i.e. the motion is planar</p>
+<p>then we can choose a Cartesian system so that the motion lies in the $(x,y)$ plane</p>
+<h3 id="Thm-law-of-conservation-of-angular-momentum"><a href="#Thm-law-of-conservation-of-angular-momentum" class="headerlink" title="Thm. law of conservation of angular momentum"></a>Thm. law of conservation of angular momentum</h3><p>introduce the polar coordinates system</p>
+<script type="math/tex; mode=display">\begin{cases}
+    x(t)=r(t)\cos \theta(t)\\
+    y(t)=r(t)\sin \theta(t)\\
+\end{cases}</script><p>then we have</p>
+<script type="math/tex; mode=display">\begin{cases}
+    \ddot{x}=\ddot{r}\cos\theta-2\dot{r}\sin\theta\dot{\theta}-r\cos \theta\dot{\theta}^2-r\sin\theta\ddot{\theta}\\
+    \ddot{y}=\ddot{r}\sin\theta+2\dot{r}\cos\theta\dot{\theta}-r\sin \theta\dot{\theta}^2+r\cos\theta\ddot{\theta}\\
+\end{cases}</script><p>introduce $e_{\vec{r}}=\begin{bmatrix}<br>\cos\theta\\ \sin\theta\\<br>\end{bmatrix},e_{\theta}=\begin{bmatrix}<br>-\sin\theta\\ \cos\theta\\<br>\end{bmatrix}$</p>
+<script type="math/tex; mode=display">\ddot{\vec{r}}=(\ddot{r}-r\dot{\theta}^2)e_{\vec{r}}+(2\dot{r}\dot{\theta}+r\ddot{\theta})e_\theta</script><p>then we can rewrite Newton’s second law as $f(r)e_{\vec{r}}=m\ddot{\vec{r}}$, i.e.</p>
+<script type="math/tex; mode=display">\begin{cases}
+    m(\ddot{r}-r\dot{\theta}^2)=f(r)\tag{*}\\
+    2\dot{r}\dot{\theta}+r\ddot{\theta}=0\\
+\end{cases}</script><p>by the second equation, we have </p>
+<script type="math/tex; mode=display">\frac{1}{r}\frac{d}{dt}(r^2\dot{\theta})=0</script><p>which means that </p>
+<script type="math/tex; mode=display">r^2\dot{\theta}=c=\text{const}</script><p>we call it law of conservation of angular momentum</p>
+<p>if $c=0$, the motion is linear, in the following parts, we consider $c\neq 0$, then $\theta$ is monotonic w.r.t $t$ and as a result, the inverse function $t=t(\theta)$ exists</p>
+<h3 id="Thm-Kepler’s-second-law"><a href="#Thm-Kepler’s-second-law" class="headerlink" title="Thm. Kepler’s second law"></a>Thm. Kepler’s second law</h3><p>the position vector sweeps out a curviliniar sector of area</p>
+<script type="math/tex; mode=display">S(t)=\int_{\theta(0)}^{\theta(t)}\frac{1}{2}r^2(\theta)d\theta=\int_0^t\frac{1}{2}r^2(\theta(s))\dot{\theta}(s)ds=\frac{ct}{2}</script><h3 id="Thm-law-of-conservation-of-energy"><a href="#Thm-law-of-conservation-of-energy" class="headerlink" title="Thm. law of conservation of energy"></a>Thm. law of conservation of energy</h3><p>let V be the potential(位势) of $f$, i.e. $V’(r)=-f(r)$</p>
+<p>then we can rewrite the first equation of (*) as </p>
+<script type="math/tex; mode=display">m\ddot{r}-m\frac{c^2}{r^3}+V'(r)=0</script><p>it leads us to consider the effective potential</p>
+<script type="math/tex; mode=display">V_e(r):=V(r)+\frac{mc^2}{r^2}</script><p>then we have </p>
+<script type="math/tex; mode=display">m\ddot{r}+V_e'(r)=0</script><script type="math/tex; mode=display">\frac{d}{dt}(\frac{1}{2}m\dot{r}^2+V_e(r))=0</script><p>which means that </p>
+<script type="math/tex; mode=display">\frac{1}{2}m\dot{r}^2+V_e(r)=E=\text{const}</script><p>we call it law of conservation of energy</p>
+<p>also, we have</p>
+<script type="math/tex; mode=display">\dot{r}=\pm\sqrt{\frac{2}{m}(E-V_e(r))}</script><p>the equation of $r,t$ is almost impossible to solve</p>
+<p>however, note that </p>
+<script type="math/tex; mode=display">\dot{r}=\frac{dr}{d\theta}\frac{d\theta}{dt}=\dot{\theta}\frac{dr}{d\theta}</script><p>then we can rewrite the equation as</p>
+<script type="math/tex; mode=display">\dot{\theta}\frac{dr}{d\theta}=\pm\sqrt{\frac{2}{m}(E-V_e(r))}</script><script type="math/tex; mode=display">\frac{dr}d\theta=\pm\frac{c}{r^2}\sqrt{\frac{2}{m}(E-V_e(r))}</script><p>which is separable, we can get the solution</p>
+<script type="math/tex; mode=display">\theta-\theta_0=\pm\sqrt{\frac{m}{2}}c\int_{r(\theta_0)}^r\frac{ds}{s^2(E-V_e(s))}</script><p>it is a monotone function $\theta=\theta(r)$, by inverting it, we can find $r=r(\theta)$</p>
+<p>we use the line $V_e=E$ to cut out the graph $V_e\sim r$, the $r$ of the two intersection points are $r_1,r_2$, as $V_e\leq E$ always holds, the trajectory lies in the annulus $0&lt;r_1\leq r\leq r_2&lt;\infty$, namely, $r_{1,2}$ are the points so that $\dot{r}=0,V_e(r)=E$</p>
+<h3 id="Thm-1"><a href="#Thm-1" class="headerlink" title="Thm."></a>Thm.</h3><p>under the hypothesis, $r(t)$ is a periodic function</p>
+<p>Proof. by </p>
+<script type="math/tex; mode=display">\dot{r}=\pm\sqrt{\frac{2}{m}(E-V_e(r))}</script><p>the time between $r_1$ and $r_2$ is a const</p>
+<script type="math/tex; mode=display">\tau=\int_{r_1}^{r_2}\frac{ds}{\sqrt{\frac{2}{m}(E-V_e(s))}}</script><p>thus, $r(t)$ is a $2\tau$-periodic function</p>
+<h3 id="Def-5"><a href="#Def-5" class="headerlink" title="Def."></a>Def.</h3><p>the angle between the apoapsis(最远点) and the periasis(最近点) is given by</p>
+<script type="math/tex; mode=display">\Theta=\Theta(E)=\sqrt{\frac{m}{2}}c\int_{r_1}^{r_2}\frac{ds}{s^2\sqrt{E-V_e(s)}}</script><p>Rmk. clearly, the trajectory is closed iff $\frac{\Theta}{2\pi}$ is rational</p>
+<p>as $V_e(r_1)=V_e(r_2)=E$, by Fermat’s thm, there exists $r^<em>$, where $V_e’(r^</em>)=0$</p>
+<p>in the following, we assume $m=1$ and $V_e’’(r^*)&gt;0$</p>
+<p>now we try to change the value of $E$, firstly, let $E\downarrow V_e(r^*)$</p>
+<h3 id="Lemma"><a href="#Lemma" class="headerlink" title="Lemma."></a>Lemma.</h3><script type="math/tex; mode=display">\Theta_{\text{circle}}=\lim_{E\downarrow V_e(r^*)}\Theta(E)=\dot{\theta}(r^*)\frac{\pi}{\sqrt{V_e''(r^*)}}=\pi\sqrt{\frac{V'(r^*)}{3V'(r^*)+r^*V''(r^*)}}</script><p>Proof. by Tayler’s formula,</p>
+<script type="math/tex; mode=display">V_e'(r)=V_e'(r^*)+V_e''(r^*)(r-r^*)+o(r-r^*)\text{ as } r\to r^*</script><p>consider</p>
+<script type="math/tex; mode=display">m\ddot{r}+V_e'(r)=0</script><p>do the linear approximation, we have</p>
+<script type="math/tex; mode=display">\ddot{r}+V_e''(r^*)(r-r^*)=0</script><script type="math/tex; mode=display">\frac{d}{dt}(\dot{r}^2+V_e''(r^*)(r-r^*)^2)=0</script><script type="math/tex; mode=display">dt=\frac{dr}{\sqrt{V_e''(r^*)((r_2-r^*)^2-(r-r^*)^2)}}=\frac{dr}{\sqrt{V_e''(r^*)((r_1-r^*)^2-(r-r^*)^2)}}</script><p>thus, </p>
+<script type="math/tex; mode=display">T=2(\int_{r^*}^{r_2}\frac{dr}{\sqrt{V_e''(r^*)((r_2-r^*)^2-(r-r^*)^2)}}</script><script type="math/tex; mode=display">+\int_{r_1}^{r^*}\frac{dr}{\sqrt{V_e''(r^*)((r_1-r^*)^2-(r-r^*)^2)}})=\frac{2\pi}{\sqrt{V_e''(r^*)}}</script><p>as $E\downarrow V_e(r^<em>)$, $r_1,r_2\to r^</em>$, so during the whole motion we have $\dot{\theta}=\frac{c}{r^2}\approx \dot{\theta}(r^*)$</p>
+<p>also, since $0=V_e’(r^<em>)=V’(r^</em>)-\frac{c^2}{(r^<em>)^3},V_e’’(r^</em>)=V’’(r^<em>)+\frac{3c^2}{(r^</em>)^4},r^2\dot{\theta}=c$</p>
+<script type="math/tex; mode=display">\Theta_{\text{circle}}=\dot{\theta}\frac{T}{2}=\dot{\theta}(r^*)\frac{\pi}{\sqrt{V_e''(r^*)}}=\pi\sqrt{\frac{V'(r^*)}{3V'(r^*)+r^*V''(r^*)}}</script><p>in order to find motions that are closed for all $r$, we need consider when $\Theta(E)$ is independent of $r$</p>
+<h3 id="Lemma-1"><a href="#Lemma-1" class="headerlink" title="Lemma."></a>Lemma.</h3><p>if $\Theta(E)$ is independent of $r$ (and thus $E$), then $V$ must be of the forms </p>
+<script type="math/tex; mode=display">V(r)=Ar^s(s\geq -2,s\neq 0,As>0)\text{ or }V(r)=Blnr(s=0,B>0)</script><p>Proof. as $\Theta(E)$ is independent of $E$,</p>
+<script type="math/tex; mode=display">\Theta(E)=\Theta_{\text{circle}}=\pi\sqrt{\frac{V'(r^*)}{3V'(r^*)+r^*V''(r^*)}}=const</script><p>then we just need to solve</p>
+<script type="math/tex; mode=display">3\dot{V}+r\ddot{V}=\lambda\dot{V}</script><script type="math/tex; mode=display">\dot{V}=e^Cr^{\lambda-3}</script><p>let $s:=\lambda-2$, if $s\neq 0$</p>
+<script type="math/tex; mode=display">V=\frac{e^C}{s}r^{s}</script><p>as $V_e(r)$ should be monotone (otherwise we don’t have $r_1,r_2$), we shall let $s\geq -2$</p>
+<p>if $s=0$</p>
+<script type="math/tex; mode=display">V=e^Clnr</script><h3 id="Lemma-2"><a href="#Lemma-2" class="headerlink" title="Lemma."></a>Lemma.</h3><p>if $s\geq 0$,</p>
+<script type="math/tex; mode=display">\Theta(+\infty):=\lim_{E\to +\infty}\Theta(E)=\frac{\pi}{2}</script><p>Proof. firstly, it is easy to show when $E\to +\infty, r_1\to 0,r_2\to+\infty$</p>
+<p>introduce $x=\frac{c}{r},x_{max}=\frac{c}{r_1},x_{min}=\frac{c}{r_2}$, then</p>
+<script type="math/tex; mode=display">\Theta(E)=\int_{r_1}^{r_2}\frac{ds}{s^2\sqrt{2(E-V_e(s))}}=\int_{x_{min}}^{x_{max}}\frac{dx}{\sqrt{2(V_e(\frac{c}{x_{max}}))-V_e(\frac{c}{x}))}}</script><p>introduce $y=\frac{x}{x_{max}}$, then if $s&gt;0$</p>
+<script type="math/tex; mode=display">\Theta(E)=\int_{x_{min}}^{x_{max}}\frac{dx}{\sqrt{x_{max}^2-x^2+2A((\frac{c}{x_{max}})^s-(\frac{c}{x})^s)}}</script><script type="math/tex; mode=display">=\int_{\frac{r_1}{r_2}}^1\frac{dy}{\sqrt{1-y^2+\frac{2Ac^s}{x_{max}^{2+s}}(1-y^{-s})}}</script><p>if $s=0$, similarly, we have</p>
+<script type="math/tex; mode=display">\Theta(E)=\int_{\frac{r_1}{r_2}}^1\frac{dy}{\sqrt{1-y^2+\frac{2B}{x_{max}^2}lny}}</script><p>thus, </p>
+<script type="math/tex; mode=display">\Theta(+\infty)=\int_0^1\frac{dy}{\sqrt{1-y^2}}=\frac{\pi}{2}</script><h3 id="Lemma-3"><a href="#Lemma-3" class="headerlink" title="Lemma."></a>Lemma.</h3><p>if $-2&lt;s&lt;0$, then </p>
+<script type="math/tex; mode=display">\Theta(0^-):=\lim_{E\to 0^-}\Theta(E)=\frac{\pi}{2+s}</script><p>Proof. similarly, we have</p>
+<script type="math/tex; mode=display">\Theta(E)=\int_{\frac{r_1}{r_2}}^1\frac{dy}{\sqrt{1-y^2+\frac{2Ac^s}{x_{max}^{2+s}}(1-y^{-s})}}</script><p>the difference is when $E\to 0^-,x_{max}$ here is $\frac{c}{r_1}$, where $r_1$ is the root of $V_e(r)=0$, i.e.</p>
+<script type="math/tex; mode=display">Ar_1^s+\frac{c^2}{2r_1^2}=0</script><script type="math/tex; mode=display">x_{max}^{s+2}=\frac{c^{s+2}}{r_1^{s+2}}=-2Ac^s</script><p>thus, </p>
+<script type="math/tex; mode=display">\Theta(0^-)=\int_0^1\frac{dy}{\sqrt{y^{-s}-y^2}}=\frac{2}{s+2}\int_0^1\frac{dy^{\frac{2}{s+2}}}{\sqrt{1-y^{s+2}}}=\frac{2}{s+2}\int_0^1\frac{dy}{\sqrt{1-y^2}}=\frac{\pi}{s+2}</script><p>Finally, we have</p>
+<h3 id="Thm-2"><a href="#Thm-2" class="headerlink" title="Thm."></a>Thm.</h3><p>if all bounded trajectories in a central field is closed, then</p>
+<script type="math/tex; mode=display">V(r)=Ar^2\text{ or }V(r)=-\frac{A}{r}(A>0)</script><p>Proof. note that</p>
+<script type="math/tex; mode=display">\Theta_{\text{circle}}=\pi\sqrt{\frac{V'(r^*)}{3V'(r^*)+r^*V''(r^*)}}</script><p>no matter </p>
+<script type="math/tex; mode=display">V(r)=Ar^s(s\geq -2,s\neq 0,As>0)\text{ or }V(r)=Blnr(s=0,B>0)</script><p>we all have $\Theta_{\text{circle}}=\frac{\pi}{\sqrt{s+2}}$</p>
+<p>if $s=0,\frac{\Theta_{\text{circle}}}{2\pi}$ is not rational, the trajectory is not closed</p>
+<p>if $s&gt;0$, by $\Theta_{\text{circle}}=\Theta(+\infty),s=2$</p>
+<p>if $s&lt;0$, by $\Theta_{\text{circle}}=\Theta(0^-),s=-1$</p>
+<h3 id="Thm-Kepler’s-first-law"><a href="#Thm-Kepler’s-first-law" class="headerlink" title="Thm. Kepler’s first law"></a>Thm. Kepler’s first law</h3><p>for $V(r)=-\frac{A}{r}$, the bounded trajectory (i.e. $E&lt;0$) is an ellipse, one of the foci is center of force</p>
+<p>Proof. WLOG, assume $\theta(0)=0$</p>
+<script type="math/tex; mode=display">\theta=\int\frac{cdr}{r^2\sqrt{2(E+\frac{A}{r}-\frac{c^2}{2r^2})}}=\arccos\frac{\frac{c}{r}-\frac{A}{c}}{\sqrt{2E+\frac{A^2}{c^2}}}</script><p>thus, introduce $e=\sqrt{1+\frac{2Ec^2}{A^2}}&lt;1,p=\frac{c^2}{A}$</p>
+<p>we have</p>
+<script type="math/tex; mode=display">r=\frac{p}{1+e\cos\theta}</script><p>which is an ellipse</p>
+<h3 id="Thm-Kepler’s-third-law"><a href="#Thm-Kepler’s-third-law" class="headerlink" title="Thm. Kepler’s third law"></a>Thm. Kepler’s third law</h3><p>for $V(r)=-\frac{A}{r}(A&gt;0),\frac{a^3}{T^2}=\frac{A}{4\pi^2}$, where $a=\frac{p}{1-e^2}$ is the semimajor axis</p>
+<p>Proof. by $S(t)=\frac{ct}{2}$, we have</p>
+<script type="math/tex; mode=display">T=\frac{2}{c}\pi ab=\frac{2}{c}\pi a^2\sqrt{1-e^2}=\frac{2}{c}\pi a^2\sqrt{\frac{p}{a}}=\frac{2\pi}{\sqrt{A}}a^\frac{3}{2}</script><h3 id="Thm-3"><a href="#Thm-3" class="headerlink" title="Thm."></a>Thm.</h3><p>for $V=Ar^2(A&gt;0)$ the trajectory is an ellipse centered at center of the force</p>
+<p>Proof. we have</p>
+<script type="math/tex; mode=display">\ddot{r}=f(r)e_r=-2Are_r</script><p>i.e.</p>
+<script type="math/tex; mode=display">\begin{cases}
+\ddot{x}=-2Ax\\
+\ddot{y}=-2Ay\\
+\end{cases}</script><p>$\exists a_1,a_2,b_1,b_2$ s.t.</p>
+<script type="math/tex; mode=display">\begin{bmatrix}
+x\\y\\    
+\end{bmatrix}
+=\begin{bmatrix}
+a_1&a_2\\b_1&b_2\\    
+\end{bmatrix}
+\begin{bmatrix}
+\sin\sqrt{2A}t\\
+\cos\sqrt{2A}t\\    
+\end{bmatrix}</script><p>if $\begin{vmatrix}<br>a_1&amp;a_2\\b_1&amp;b_2\\<br>\end{vmatrix}=0$, the motion is linear</p>
+<p>otherwise, we have $\begin{bmatrix}<br>c_1&amp;c_2\\d_1&amp;d_2\\<br>\end{bmatrix}=\begin{bmatrix}<br>a_1&amp;a_2\\b_1&amp;b_2\\<br>\end{bmatrix}^{-1}$</p>
+<script type="math/tex; mode=display">(c_1x+c_2y)^2+(d_1x+d_2y)^2=1</script><p>which is an ellipse centered at $O$</p>
+<h2 id="existance-and-uniqueness-of-non-linear-equations"><a href="#existance-and-uniqueness-of-non-linear-equations" class="headerlink" title="existance and uniqueness of non-linear equations"></a>existance and uniqueness of non-linear equations</h2>
       
     </div>
     
@@ -399,7 +505,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/09/06/Mathematical%20Analysis%20III/" rel="prev" title="Mathematical Analysis III">
+              <a href="/2020/09/06/Mathematical%20Analysis%20Solution/" rel="prev" title="Mathematical Analysis III">
                 Mathematical Analysis III <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -544,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordinary-Differential-Equations"><span class="nav-number">1.</span> <span class="nav-text">Ordinary Differential Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Def"><span class="nav-number">1.1.1.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.1.4.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-homogeneous-equations-齐次方程"><span class="nav-number">1.1.5.</span> <span class="nav-text">Def. homogeneous equations 齐次方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-exact-equation-恰当方程"><span class="nav-number">1.1.6.</span> <span class="nav-text">Def. exact equation 恰当方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-Poincare-lemma"><span class="nav-number">1.1.7.</span> <span class="nav-text">Thm. Poincare lemma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-3"><span class="nav-number">1.1.8.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-4"><span class="nav-number">1.1.9.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-Bernoulli-equation"><span class="nav-number">1.1.10.</span> <span class="nav-text">Def. Bernoulli equation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-Riccati-equations"><span class="nav-number">1.1.11.</span> <span class="nav-text">Def. Riccati equations</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ordinary-Differential-Equations"><span class="nav-number">1.</span> <span class="nav-text">Ordinary Differential Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Def"><span class="nav-number">1.1.1.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-1"><span class="nav-number">1.1.2.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-2"><span class="nav-number">1.1.3.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.1.4.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-homogeneous-equations-齐次方程"><span class="nav-number">1.1.5.</span> <span class="nav-text">Def. homogeneous equations 齐次方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-exact-equation-恰当方程"><span class="nav-number">1.1.6.</span> <span class="nav-text">Def. exact equation 恰当方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-Poincare-lemma"><span class="nav-number">1.1.7.</span> <span class="nav-text">Thm. Poincare lemma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-3"><span class="nav-number">1.1.8.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-4"><span class="nav-number">1.1.9.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-Bernoulli-equation"><span class="nav-number">1.1.10.</span> <span class="nav-text">Def. Bernoulli equation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-Riccati-equations"><span class="nav-number">1.1.11.</span> <span class="nav-text">Def. Riccati equations</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Central-motions-and-Kepler’s-law"><span class="nav-number">1.2.</span> <span class="nav-text">Central motions and Kepler’s law</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-central-field-force"><span class="nav-number">1.2.1.</span> <span class="nav-text">Def. central field force</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm"><span class="nav-number">1.2.2.</span> <span class="nav-text">Thm.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-law-of-conservation-of-angular-momentum"><span class="nav-number">1.2.3.</span> <span class="nav-text">Thm. law of conservation of angular momentum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-Kepler’s-second-law"><span class="nav-number">1.2.4.</span> <span class="nav-text">Thm. Kepler’s second law</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-law-of-conservation-of-energy"><span class="nav-number">1.2.5.</span> <span class="nav-text">Thm. law of conservation of energy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-1"><span class="nav-number">1.2.6.</span> <span class="nav-text">Thm.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Def-5"><span class="nav-number">1.2.7.</span> <span class="nav-text">Def.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma"><span class="nav-number">1.2.8.</span> <span class="nav-text">Lemma.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-1"><span class="nav-number">1.2.9.</span> <span class="nav-text">Lemma.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-2"><span class="nav-number">1.2.10.</span> <span class="nav-text">Lemma.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lemma-3"><span class="nav-number">1.2.11.</span> <span class="nav-text">Lemma.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-2"><span class="nav-number">1.2.12.</span> <span class="nav-text">Thm.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-Kepler’s-first-law"><span class="nav-number">1.2.13.</span> <span class="nav-text">Thm. Kepler’s first law</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-Kepler’s-third-law"><span class="nav-number">1.2.14.</span> <span class="nav-text">Thm. Kepler’s third law</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thm-3"><span class="nav-number">1.2.15.</span> <span class="nav-text">Thm.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#existance-and-uniqueness-of-non-linear-equations"><span class="nav-number">1.3.</span> <span class="nav-text">existance and uniqueness of non-linear equations</span></a></li></ol></li></ol></div>
             
 
           </div>
